@@ -89,7 +89,7 @@
         },
         created() {
             const _this = this
-            axios.get('http://39.106.173.77/order/detail/' + this.$route.query.orderId).then(function (resp) {
+            axios.get('http://39.106.173.77:8182/order/detail/' + this.$route.query.orderId).then(function (resp) {
                 console.log(resp.data)
                 _this.data = resp.data.data
             })
