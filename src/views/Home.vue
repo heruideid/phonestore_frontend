@@ -94,13 +94,22 @@
                 })
             },
             buy(index) {
+                // console.log(index)
                 this.show = true
                 const _this = this
+                _this.sku=''
+                _this.goods=''
                 axios.get('http://39.106.173.77:8182/phone/findSpecsByPhoneId/' + this.phones[index].id).then(function (resp) {
                     if (resp.data.data != null) {
                         _this.goods = resp.data.data.goods
                         _this.sku = resp.data.data.sku
-                        console.log(_this.sku)
+                        // console.log(_this.sku)
+                    }
+                    else{
+                        _this.sku=''
+                        _this.goods=''
+                        Toast("商品已售罄");
+
                     }
                 })
             },
