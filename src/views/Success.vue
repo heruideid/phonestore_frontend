@@ -27,7 +27,7 @@
         },
         created() {
             this.orderId = this.$route.query.orderId
-            this.amount = this.$route.query.amount
+            this.amount = (parseFloat(this.$route.query.amount)+10).toFixed(2)
         },
         methods: {
             showInfo() {
